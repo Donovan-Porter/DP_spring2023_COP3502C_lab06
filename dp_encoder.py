@@ -57,8 +57,6 @@ def main():
         # Third option is 'Quit'
         if chose == 3:
 
-            print('Have a nice day.')
-
             quit()
 
         # First option is 'Encode'
