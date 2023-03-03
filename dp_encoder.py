@@ -64,11 +64,13 @@ def main():
         # First option is 'Encode'
         elif chose == 1:
 
-            print('Please enter a password to encode:')
+            print('Please enter your password to encode: ')
 
             passing = input()
 
             super_encoded = encoder(passing)
+
+            print('Your password has been encoded and stored!')
 
         # Waiting for your code for if choice is 'Decode'.
         elif chose == 2:
