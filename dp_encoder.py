@@ -16,9 +16,17 @@ def encoder(pw):
 
     for i in password:
 
-        i = int(i)
+        if i == 7 or 8 or 9:
 
-        i += 3
+            i = int(i)
+
+            i = i + 3 - 10
+
+        else:
+
+            i = int(i)
+
+            i += 3
 
         encoded += str(i)
 
