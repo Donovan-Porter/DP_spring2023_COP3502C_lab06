@@ -16,7 +16,7 @@ def encoder(pw):
 
     for i in password:
 
-        if i == 7 or 8 or 9:
+        if i == '7' or '8' or '9':
 
             i = int(i)
 
