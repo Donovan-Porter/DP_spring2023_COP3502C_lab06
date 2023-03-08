@@ -4,6 +4,10 @@ lab 06 - Version Control
 Donovan Porter ufid: 3156-0961
 donovanporter@ufl.edu
 '''
+super_encoded = ''
+super_decoded = ''
+passing = ''
+
 
 def encoder(pw):
     '''
@@ -16,7 +20,7 @@ def encoder(pw):
 
     for i in password:
 
-        if i == '7' or '8' or '9':
+        if i == '7' or i == '8' or i == '9':
 
             i = int(i)
 
@@ -28,10 +32,31 @@ def encoder(pw):
 
             i += 3
 
+
         encoded += str(i)
 
     return encoded
 
+# This function decodes a previously encoded password
+def decoder(encoded):
+
+    decoded = ''
+
+    encoded = str(encoded)
+
+    for i in encoded:
+
+        i = int(i)
+
+        if i == 2 or i == 1 or i == 0:
+
+            i = i + 10
+
+        i -= 3
+
+        decoded += str(i)
+
+    return decoded
 
 def menu():
     '''
@@ -57,8 +82,12 @@ def main():
     '''
     Main logic loop.
     '''
+    global super_encoded
+    global super_decoded
+    global passing
 
     try:
+
 
         chose = int(menu())
 
@@ -74,14 +103,16 @@ def main():
 
             passing = input()
 
-            super_encoded = encoder(passing)
-
             print('Your password has been encoded and stored!')
 
-        # Waiting for your code for if choice is 'Decode'.
+        # I put in the code for this part of main!! I tried to match your formatting as best I could.
         elif chose == 2:
 
+            super_encoded = encoder(passing)
 
+            super_decoded = decoder(super_encoded)
+
+            print(f'The encoded password is {super_encoded}, and the original password is {super_decoded}.\n')
 
     # Restarts program if choice is out of bounds.
     except ValueError:
@@ -108,3 +139,13 @@ if __name__ == '__main__':
 # (*)   (*)
 #  =  M  =
 #   mwrar
+
+# You fool! I have created an equally powerful being.
+# Meet the smiley face which is very good at beating up kittens!!
+# While they fight I shall sneak away unscathed.
+
+#    _________
+#   / (@)  (@)\
+#  |  \______/ |
+#   \_________/
+# *Grins*
